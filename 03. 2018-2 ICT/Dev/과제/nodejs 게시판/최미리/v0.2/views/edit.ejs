@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form class="post-form form-horizontal" action="/board/<%= board._id %>?_method=put" method="post">  
+      제목 : <input class="form-control" type="text" id="title" name="title" value="<%= board.title %>"><br>
+      내용 : <textarea class="form-control" id="contents" name="contents" rows="5"><%= board.contents %></textarea><br>
+      글쓴이 : <input class="form-control" type="text" id="author" name="author" value="<%= board.author %>"><br>
+      <input type="submit" value="확인">
+    </form>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+ 
+# dependencies #
+# 모듈 제거
+node_modules
+
+# vscode setting
+/.vscode
+
+
+
+# Compiled source #
+#실행파일 제거
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+#패키지 파일 제거
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+ 
+# Logs and databases #
+#로그, 데이터베이스 파일 제거
+*.log
+/log
+*.json
+*.sql
+*.sqlite
+ 
+
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+views/users/register.ejs
+
+
+# testing
+/coverage
+
+# production
+/build
+
+
+

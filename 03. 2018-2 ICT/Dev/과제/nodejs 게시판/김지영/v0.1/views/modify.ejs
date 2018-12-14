@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <%
+    var read = rows[0];
+  %>
+  <body>
+    <h1><%= title %></h1>
+    <form method="post" action="/board/modify2" onsubmit="onWriteSubmit()">
+        <input type="hidden" name="idx" id="idx" value="<%=read.idx%>">
+        <input type="hidden" name="username" id="username" value="<%=username%>">
+        <input type="hidden" name="writer" id="writer" value="<%=read.writer%>">
+    <table border="2">
+      <tr>
+        <th>번호</th>
+        <td><%=read.idx%></td>
+        <th>조회수</th>
+        <td><%=read.hit%></td>
+        <th>글쓴이</th>
+        <td><%=read.writer%></td>
+      </tr>
+      <tr>
+        <th>제목</th>
+        <td colspan="5"><input type='text' name='title' id='title' value='<%=read.title%>'required></td>
+      </tr>
+      <tr>
+        <th>작성일</th>
+        <td colspan="6"><%=read.regdate%></td>
+      </tr>
+      <tr>
+        <td colspan="6" height="400" ><textarea cols="50" role="12" rows="25" name="content" id="content" required><%=read.content%></textarea></td>
+      </tr>
+      <tr>
+          <td colspan="6">
+            <input type="submit" value="등록">
+            <input type="button" value="취소" onclick="location.href='/board/read/<%=read.idx%>'">      </td>  
+      </tr>
+     
+    </table>
+</form>
+
+<script>
+        function onWriteSubmit()
+        {
+    
+          if ( $("#title").val().trim() == "" )
+          {
+            var message = "제목을 입력해 주세요";
+            $("#title").val("");
+            $("#title").focus();
+            alert(message);
+            return false;
+          }
+    
+          if ( $("#content").val().trim() == "" )
+          {
+            var message = "본문 내용을 입력해 주세요";
+            $("#content").val("");
+            $("#content").focus();
+            alert(message);
+            return false;
+          }
+        }
+      </script>
+
+  </body>
+</html>

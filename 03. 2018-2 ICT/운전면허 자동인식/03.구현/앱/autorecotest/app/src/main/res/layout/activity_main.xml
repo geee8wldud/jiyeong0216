@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <org.opencv.android.JavaCameraView
+        android:id="@+id/activity_surface_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!--ROI 영역-->
+    <SurfaceView
+        android:id="@+id/surface_roi_border"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#ff0000"/>
+
+    <SurfaceView
+        android:id="@+id/surface_roi"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#00ff0000" />
+
+
+    <TextView
+        android:id="@+id/frametext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="           면허증을 틀 안에 맞추고\n빛이 반사되지 않도록 인식시켜주세요"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btncamera"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="인식"
+        android:onClick="onClickButton"/>
+
+
+</RelativeLayout>
+

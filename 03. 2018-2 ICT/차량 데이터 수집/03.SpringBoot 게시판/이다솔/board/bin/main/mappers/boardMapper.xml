@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ 
+ 
+ <!-- 메소드가 실행될 때 동작하는 SQL query -->
+ 
+<mapper namespace="com.board.mapper.BoardMapper">
+ 
+    <insert id="boardInsert" parameterType="com.board.domain.Boardlist">
+        insert into testboard
+            values
+        (#{board_id},#{username},#{subject},#{contents},0,now())
+    </insert>
+    
+    <select id="boardList" resultType="com.board.domain.Boardlist">
+        select * from testboard
+    </select>
+    
+    <select id="boardView" parameterType="int" resultType="com.board.domain.Boardlist">
+    	select * from testboard where board_id = #{board_id}
+    </select>
+    
+    <select id="boardrecentView" resultType="com.board.domain.Boardlist">
+    	select * from testboard where board_id = (select max(board_id)as board_id from testboard)
+    </select>
+    
+    <update id="hitPlus" parameterType="int">
+    	update testboard set hits = hits + 1 where board_id = #{board_id}
+    </update>
+    
+    <update id="boardUpdate" parameterType="com.board.domain.Boardlist">
+    	update testboard set subject = #{subject}, contents = #{contents} where board_id = #{board_id}
+    </update>
+    
+    <delete id="boardDelete" parameterType="int">
+    	delete from testboard where board_id = #{board_id};
+<!-- 	ALTER table testboard AUTO_INCREMENT = 1;
+		set @CNT = 0;
+	   	update testboard set testboard.board_id = @CNT:=@CNT+1; -->
+    </delete>
+</mapper>

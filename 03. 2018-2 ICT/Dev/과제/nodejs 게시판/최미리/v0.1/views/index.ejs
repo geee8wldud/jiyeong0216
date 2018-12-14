@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <a href="write"><input type="button" value="글쓰기" id="write" class="btn btn-write"></a><br>
+      <table width="600" class="table table-condensed">
+        <tr>
+          <th width="40">번호</th>
+          <th width="260">제목</th>
+          <th width="100">작성자</th>
+          <th width="160">날짜</th>
+          <th width="40">조회</th>
+        </tr>
+        
+        <%
+        if(board !== null){
+        for(var i = 0; i < board.length; i++) { 
+        %>
+          <tr>
+            <td width="40"><div style="text-align:center"><%=i+1 %></div></td>
+            <td width="260"><div style="text-align:center"><a href="/board/<%= board[i]._id%>"><h3><%=board[i].title%></h3></a></div></td>   
+            <td width="100"><div style="text-align:center"><%=board[i].author%></div></td>
+            <td width="160"><div style="text-align:center"><%=board[i].board_date%></div></td>
+            <td width="40"><div style="text-align:center"><%=board[i].views%></div></td>
+
+
+          </tr>
+        <%
+         }}
+        %>
+      
+      </table><br>
+      <form class="post-form form-horizontal1" action="/board/<%= board.author %>" method="get">  
+      <div width="400">검색 : <input type="text" name="title">  <input type="submit" value="확인"></div></form>
+   
+  
+
+    </body>
+</html>

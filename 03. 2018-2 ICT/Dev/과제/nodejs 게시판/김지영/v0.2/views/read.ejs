@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8"> 
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <%
+    var read = rows[0];
+  %>
+  <body>
+    <h1><%= title %></h1>
+    <table border="2">
+      <tr>
+        <th>번호</th>
+        <td colspan="1"><%=read.idx%></td>
+        <th>조회수</th>
+        <td><%=read.hit%></td>
+        <th>글쓴이</th>
+        <td><%=read.writer%></td>
+      </tr>
+      <tr>
+        <th>제목</th>
+        <td colspan="5"><%=read.title%></td>
+      </tr>
+      <tr>
+        <th>작성일</th>
+        <td colspan="2"><%=read.regdate%></td>
+        <th>수정일</th>
+        <td colspan="2"><%=read.moddate%></td>
+      </tr>
+      <tr>
+        <td colspan="6" height="400" ><%=read.content%></td>
+      </tr>
+      <tr>
+        <td colspan="6">
+          <form action='/board/delete?_method=delete' method='post'>
+            <input type="hidden" name="idx" id="idx" value="<%=read.idx%>">
+          <input type="button" value="목록" onclick="location.href='/board/list'">
+          <input type="button" value="수정" onclick="location.href='/board/modify/<%=read.idx%>'">
+
+          <input type="submit" value="삭제">
+        </form>
+      </td>
+      </tr>
+    </table>
+  </body>
+</html>

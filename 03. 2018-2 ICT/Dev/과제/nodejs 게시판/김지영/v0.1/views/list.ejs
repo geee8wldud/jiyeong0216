@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <h3> <%= username %> 님이 로그인 하였습니다. </h3>
+    <table border="2">
+      <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>글쓴이</th>
+        <th>조회수</th>
+        <th>작성일</th>
+      </tr>
+      <%
+      for(var i = 0; i<rows.length; i++)
+      {
+      %>
+      <tr>
+        <td><%=i+1%></td>
+        <td>
+          <form action="/board/read/<%=rows[i].idx%>" method="POST">
+          <input type="hidden" name="username" id="username" value="<%= username%>">
+          <input type="submit" value="<%=rows[i].title%>">
+          </form>
+          <!--<a href="/board/read/<%=rows[i].idx%>"><%=rows[i].title%></a></td>-->
+        <td><%=rows[i].writer%></td>
+        <td><%=rows[i].hit%></td>
+        <td><%=rows[i].moddate%></td>
+      </tr>
+      <%
+      }
+      %>
+
+    </table>
+    <div>
+      <form action="/board/write" method="POST">
+      <input type="hidden" name="username" id="username" value="<%=username%>">
+      <input type="submit" value="글쓰기">
+      <input type="button" value="로그아웃" onclick="location.href='/users/logout'">
+      </form>
+    </div>
+
+  </body>
+</html>

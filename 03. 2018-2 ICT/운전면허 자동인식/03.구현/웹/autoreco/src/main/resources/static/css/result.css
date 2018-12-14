@@ -1,0 +1,112 @@
+<style type="text/css">
+
+
+#Box{
+	position : relative;
+	width : 100%;
+	height : 100%;
+}
+
+
+ #head {
+ float : left;
+ width : 100%;
+ height : 15%;
+ padding-top : 15px;
+ padding-left : 0px;
+  background-color:#000000;
+  color : #ffffff;
+  height : 15%;
+}
+#alink {
+ background-color:#000000;
+ color : #ffffff;
+ margin : 5px;
+ padding-left : 10px;
+
+}
+
+#center{
+	clear : left;
+	float : left;
+	width : 100%;
+	height : 100%;
+	margin : 30% 0% 0% 0%;
+	vertical-align : center;
+	text-align : center;
+}
+
+#bottom{
+	clear : left;
+	float : left;
+	width : 100%;
+	height : 100%;
+	margin : 30% 0% 10% 0%;
+	vertical-align : center;
+	text-align : center;
+}
+
+#resultImg{
+
+	width : 80%;
+	height : 20%;
+}
+
+
+		 
+<!---->
+
+$font-stack-sans-serif: Roboto, Helvetica, Arial, sans-serif;
+$font-stack-serif: "Roboto Slab", Times, "Times New Roman", serif;
+$color: #333;
+$highlight: mediumspringgreen;
+
+
+
+html, body {
+   height: 100%;
+   font-size: 20px;
+}
+
+
+body {
+   padding: 1em;
+   margin: 0;
+   line-height: 1.5;
+   font-family: $font-stack-sans-serif;
+   color: $color;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+   line-height: 1.25;
+   font-family: $font-stack-serif;
+}
+
+.form-submit {
+	   font-size : 16px;
+	   display: block;
+	   width: 75%;
+	   padding : 1em;
+	   border: none;
+	   margin: 2em auto 0;
+	   background-color: #000000;
+	   font-weight: 700;
+	   color: white;
+	   transition: opacity 200ms ease-in-out;
+	   &:hover, &:focus {
+	      opacity: .6;
+	   }
+		   
+		   
+@media only screen and (max-width:768px){
+   html, body {
+      font-size: 18px;
+   }
+}
+@media only screen and (max-width:640px){
+   html, body {
+      font-size: 16px;
+   }
+}
