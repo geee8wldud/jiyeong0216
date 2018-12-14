@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    
+    <style>.selected{text-decoration:line-through;font-weight:700;color:red}</style>
+    <script> 
+    $(document).ready(function() { 
+        $("input:checkbox").on('click', function() { 
+            if ( $(this).prop('checked') ) { 
+                $(this).parent().parent().parent().addClass("selected"); 
+                } else { 
+                    $(this).parent().parent().parent().removeClass("selected"); 
+                    } 
+                }); 
+            }); 
+    </script>
+
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <table border="2">
+      <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>글쓴이</th>
+        <th>조회수</th>
+        <th>수정일</th>
+      </tr>
+      <%
+      for(var i = 0; i<rows.length; i++)
+      {
+      %>
+      <tr>
+        <td><p><input id="a1" type="checkbox" name='check_info' value=<%=rows[i].idx%>/><%=rows[i].idx%></p></td>
+        <td><p><a href="/read1/<%=rows[i].idx%>"><%=rows[i].title%></a></p></td>
+        <td><p><%=rows[i].writer%></p></td>
+        <td><p><%=rows[i].hit%></p></td>
+        <td><p><%=rows[i].moddate%></p></td>
+      </tr>
+      <%
+      }
+      %>
+
+    </table>
+
+    <div><a href="/write1"> 글쓰기 </a></div>
+
+   </body>
+</html>

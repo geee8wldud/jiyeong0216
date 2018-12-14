@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>게시판 만들기!</title>
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+                table {
+                  width: 100%;
+                  border: 1px solid #444444;
+                  border-collapse: collapse;
+                }
+                th, td {
+                  border: 1px solid #444444;
+                  padding: 10px;
+                }
+              </style>
+    <script type="text/javascript">
+        function write(){
+            location.href='write.html';
+        }
+    </script>
+    </head>
+    <body>
+        <h1>게시판</h1>
+    
+        <table class="table">
+          <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>날짜</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>01</td>
+                <th><a href="/read"> nodejs </a></th>
+                <th>jiyeong</th>
+                <th><%=time%></th>
+                <th>1</th>
+            </tr>
+            <tr>
+                <td>02</td>
+                <th><a href="/read"><%=title%></a></th>
+                <th><%=writer%></th>
+                <th><%=time%></th>
+                <th>1</th>
+            </tr>
+        </tbody>
+        </table>
+
+        <div>
+            <a href="/write"> 글쓰기 </a>
+        </div>
+        
+    </body>
+</html>
