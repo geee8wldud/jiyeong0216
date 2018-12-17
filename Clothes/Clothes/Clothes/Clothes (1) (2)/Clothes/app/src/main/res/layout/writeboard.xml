@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/writetitle"
+            android:layout_marginLeft="20dp"
+            android:background="@color/white"
+            android:hint="제목"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/input_login"
+            android:textColorHint="@color/input_login_hint"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/writerID"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        />
+    </LinearLayout>
+
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/writecontent"
+        android:layout_weight="0.84"
+        android:textSize="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="내용"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textColor="@color/input_login"
+        android:textColorHint="@color/input_login_hint"/>
+
+
+    <ImageView
+        android:id="@+id/photo"
+        android:layout_marginLeft="80dp"
+        android:visibility="gone"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        />
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancelwrite"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/white"
+            android:background="@layout/buttonshape"
+            android:text="취소"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/addphoto"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/white"
+            android:background="@layout/buttonshape"
+            android:text="사진 첨부"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/savewrite"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/white"
+            android:background="@layout/buttonshape"
+            android:text="완료"
+            android:layout_marginBottom="10dp"/>
+    </LinearLayout>
+</LinearLayout>
+    </ScrollView>
+</LinearLayout>

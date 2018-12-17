@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    android:orientation="vertical">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+        <Button
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/back"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:background="@drawable/backicon"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="제목"
+            android:textSize="20dp"/>
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:id="@+id/listdetailtitle"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    <ImageView
+        android:id="@+id/uploadedphoto"
+        android:visibility="gone"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_height="250dp"
+        />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="내용"
+                android:textSize="20dp"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/listdetailcontents"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="댓글"
+            android:textSize="20dp"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ID : "
+                        android:textSize="12dp"/>
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/userID"
+                        android:textSize="12dp"/>
+                </LinearLayout>
+                <EditText
+                    android:id="@+id/comments"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="330dp"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:id="@+id/commentphoto"
+                    android:layout_marginLeft="80dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:visibility="gone"
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="200dp"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/addPicture"
+                        android:layout_width="70dp"
+                        android:layout_height="20dp"
+                        android:textColor="@color/white"
+                        android:background="@layout/buttonshape"
+                        android:text="사진첨부"
+                        android:layout_marginBottom="10dp"/>
+                    <Button
+                        android:id="@+id/confirm"
+                        android:layout_marginLeft="8dp"
+                        android:layout_width="70dp"
+                        android:layout_height="20dp"
+                        android:textColor="@color/white"
+                        android:background="@layout/buttonshape"
+                        android:text="확인"
+                        android:layout_marginBottom="10dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    android:orientation="horizontal">
+
+        <ListView
+            android:id="@+id/commentListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="1" >
+        </ListView>
+</LinearLayout>
+    </LinearLayout>
+</ScrollView>
+
+</LinearLayout>
+
